@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  mysqlserverapi:
+    image: mysqlserverapi
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      NODE_ENV: production
+    ports:
+      - 8081:80
+    env_file: 
+      - .env
+    container_name: mysql-api-worker
