@@ -1,9 +1,9 @@
 FROM node:alpine
-ENV NODE_ENV=production
+ENV NODE_ENV=development
 WORKDIR /usr/src/app
 COPY . .
 
 WORKDIR /usr/src/app/server
-RUN npm install --production --silent
+RUN npm install --development --silent
 EXPOSE 8081
-CMD [ "npm", "start" ]
+CMD [ "npm", "run", "nodemon" ]

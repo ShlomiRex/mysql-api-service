@@ -7,9 +7,11 @@ services:
       context: .
       dockerfile: ./Dockerfile
     environment:
-      NODE_ENV: production
+      NODE_ENV: development
     ports:
       - 8081:80
     env_file: 
       - .env
     container_name: mysql-api-worker
+    volumes: 
+      - "C:\\Users\\Shlomi\\Desktop\\mysql-server\\server:/usr/src/app/server/"
